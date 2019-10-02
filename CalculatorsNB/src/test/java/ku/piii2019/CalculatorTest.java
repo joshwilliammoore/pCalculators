@@ -67,6 +67,10 @@ public class CalculatorTest {
         int result = instance.add(a, b);
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
+        if(result!=expResult){
+            fail("Calculator class is broken for add calculation.");
+        }
+        
         if(createError.getClass()==BrokenAddCalculator.class){
             fail("Calculator class is broken for add calculation.");
         }
@@ -85,7 +89,6 @@ public class CalculatorTest {
         int result = instance.divide(num, denom);
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
     }
 
     /**
@@ -99,11 +102,15 @@ public class CalculatorTest {
         Calculator instance = new WorkingCalculator();
         Calculator createError = new BrokenPercentageCalculator();
         int expResult = 40;
-        float result = instance.getPercentage(amount, total);
+        int result = instance.getPercentage(amount, total);
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
+        if(result!=expResult){
+            fail("Calculator is broken for percentage calculation.");
+        }
+        
         if(createError.getClass()==BrokenPercentageCalculator.class){
-            fail("Calculator class is broken for add calculation.");
+            fail("Calculator is broken for percentage calculation.");
         }
     }
 
