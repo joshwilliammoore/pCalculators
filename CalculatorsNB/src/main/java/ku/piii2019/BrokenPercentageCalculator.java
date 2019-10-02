@@ -19,8 +19,8 @@ package ku.piii2019;
             return num/denom;
         }
 
-        public float getPercentage(float amount, float total) {
-            float result = (float)((amount*101)/total);
+        public int getPercentage(float amount, float total) {
+            int result = (int)((amount*103)/total);
             System.out.println(result);
             return result;   //deliberate error
         }

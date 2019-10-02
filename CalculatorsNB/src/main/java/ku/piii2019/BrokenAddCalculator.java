@@ -21,7 +21,7 @@ package ku.piii2019;
             return num/denom;
         }
 
-        public float getPercentage(float amount, float total) {
+        public int getPercentage(float amount, float total) {
             return (int)((amount*100)/total);
         }
     }

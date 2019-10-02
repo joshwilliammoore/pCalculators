@@ -21,19 +21,19 @@ public class CalculatorTest {
     public CalculatorTest() {
     }
 
-    @org.junit.jupiter.api.BeforeAll
+    @/*org.junit.jupiter.api.*/BeforeAll
     public static void setUpClass() throws Exception {
     }
 
-    @org.junit.jupiter.api.AfterAll
+    @/*org.junit.jupiter.api.*/AfterAll
     public static void tearDownClass() throws Exception {
     }
 
-    @org.junit.jupiter.api.BeforeEach
+    @/*org.junit.jupiter.api.*/BeforeEach
     public void setUp() throws Exception {
     }
 
-    @org.junit.jupiter.api.AfterEach
+    @/*org.junit.jupiter.api.*/AfterEach
     public void tearDown() throws Exception {
     }
     
@@ -51,18 +51,18 @@ public class CalculatorTest {
     
     @AfterEach
     public void tearDown() {
-    }*/
+    }*
 
     /**
      * Test of add method, of class Calculator.
      */
-    @org.junit.jupiter.api.Test
+    @/*org.junit.jupiter.api.*/Test
     public void testAdd() {
         System.out.println("add");
         int a = -4;
-        int b = 7;
+        int b = -7;
         Calculator instance = new BrokenAddCalculator();
-        int expResult = 3;
+        int expResult = -11;
         int result = instance.add(a, b);
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
@@ -72,7 +72,7 @@ public class CalculatorTest {
     /**
      * Test of divide method, of class Calculator.
      */
-    @org.junit.jupiter.api.Test
+    @/*org.junit.jupiter.api.*/Test
     public void testDivide() {
         System.out.println("divide");
         int num = 8;
@@ -88,7 +88,7 @@ public class CalculatorTest {
     /**
      * Test of getPercentage method, of class Calculator.
      */
-    @org.junit.jupiter.api.Test
+    @/*org.junit.jupiter.api.*/Test
     public void testGetPercentage() {
         System.out.println("getPercentage");
         float amount = 4.0F;

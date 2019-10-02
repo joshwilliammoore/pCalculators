@@ -13,7 +13,7 @@ public interface Calculator {
     
     public int add(int a, int b);
     int divide(int num, int denom);
-    float getPercentage(float amount, float total);
+    int getPercentage(float amount, float total);
     // getPercentagereturns a rounded down integer, e.g:
 // amount= 0.259, total = 1.0: returns 25
 // amount = 300.0, total = 900.0: returns 33
