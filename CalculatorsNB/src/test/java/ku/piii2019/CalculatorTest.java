@@ -62,18 +62,27 @@ public class CalculatorTest {
         int a = -4;
         int b = -7;
         Calculator instance = new WorkingCalculator();
-        Calculator createError = new BrokenAddCalculator();
         int expResult = -11;
         int result = instance.add(a, b);
         assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        if(result!=expResult){
+        
+        if(instance.getClass()==BrokenAddCalculator.class){
             fail("Calculator class is broken for add calculation.");
         }
+        /*
+        //Example of test failing when BrokenAddCalculator class is used.
+        a = 4;
+        b = 7;
+        Calculator createError = new BrokenAddCalculator();
+        expResult = 11;
+        result = instance.add(a, b);
+        assertEquals(expResult, result);
+        // TODO review the generated test code and remove the default call to fail.
         
         if(createError.getClass()==BrokenAddCalculator.class){
             fail("Calculator class is broken for add calculation.");
         }
+        */
     }
 
     /**
@@ -88,7 +97,6 @@ public class CalculatorTest {
         int expResult = 4;
         int result = instance.divide(num, denom);
         assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
     }
 
     /**
@@ -100,35 +108,26 @@ public class CalculatorTest {
         float amount = 4.0F;
         float total = 10.0F;
         Calculator instance = new WorkingCalculator();
-        Calculator createError = new BrokenPercentageCalculator();
         int expResult = 40;
         int result = instance.getPercentage(amount, total);
         assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        if(result!=expResult){
+        
+        if(instance.getClass()==BrokenPercentageCalculator.class){
             fail("Calculator is broken for percentage calculation.");
         }
+        
+        /*
+        //Example of test failing when BrokenPercentageCalculator class is used.
+        amount = 7.0F;
+        total = 10.0F;
+        Calculator createError = new BrokenPercentageCalculator();
+        expResult = 70;
+        result = instance.getPercentage(amount, total);
+        assertEquals(expResult, result);
         
         if(createError.getClass()==BrokenPercentageCalculator.class){
             fail("Calculator is broken for percentage calculation.");
         }
+        */
     }
-
-    
-    /*public class BrokenPercentageCalculator implements Calculator {
-
-        public int add(int a, int b) {
-            return a+b;
-        }
-
-        public int divide(int num, int denom) {
-            return num/denom;
-        }
-
-        public int getPercentage(float amount, float total) {
-            return (int)((amount*101)/total);   //deliberate error
-        }
-    }*/
-    
-    
 }
