@@ -112,12 +112,12 @@ public class CalculatorTest {
         int result = instance.getPercentage(amount, total);
         assertEquals(expResult, result);
         
+        //Example of test failing when BrokenPercentageCalculator cla
         if(instance.getClass()==BrokenPercentageCalculator.class){
             fail("Calculator is broken for percentage calculation.");
         }
         
-        /*
-        //Example of test failing when BrokenPercentageCalculator class is used.
+        /*ss is used.
         amount = 7.0F;
         total = 10.0F;
         Calculator createError = new BrokenPercentageCalculator();
