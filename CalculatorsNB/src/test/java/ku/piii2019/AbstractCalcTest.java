@@ -48,23 +48,29 @@ public class AbstractCalcTest {
         AdditionalCalc c = null;
         AbstractCalc instance = new AbstractCalc();
         
-        AbstractCalc myModuloCalc = new AbstractCalc(
+        TwoParameterCalc myModuloCalc = (int a1,int b1) -> {return a1 % b1;};
+        
+        /*AbstractCalc myModuloCalc = new AbstractCalc(
             new TwoParameterCalc(){
                 @Override
                 public int getAnswer(int a,int b){
                     return a%b;
                 }
             }
-        );
+        );*/
 
-        TwoParameterCalc myMultiplyCalc = new TwoParameterCalc() {
+        
+        TwoParameterCalc myMultiplyCalc = (int a1,int b1) -> {return a1 * b1;};
+        
+        /*TwoParameterCalc myMultiplyCalc = new TwoParameterCalc() {
             @Override
             public int getAnswer(int a, int b) {
                 return a * b;
             }
-        };       
+        };      */ 
         
-        instance.doYourCalc(a,b,new TwoParameterCalc()
+        TwoParameterCalc myDivideCalc = (int a1,int b1) -> {return a1 / b1;};
+        /*instance.doYourCalc(a,b,new TwoParameterCalc()
         {
             @Override
             
@@ -73,7 +79,7 @@ public class AbstractCalcTest {
             {
                 return a/b;
             }
-        });
+        });*/
         
         int expResult = 5;
         int result = instance.doYourCalc(a, b, myMultiplyCalc);
@@ -95,8 +101,7 @@ public class AbstractCalcTest {
         int expResult = 0;
         int result = instance.doMyCalc(a, b);
         assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+
     }
 
 }
