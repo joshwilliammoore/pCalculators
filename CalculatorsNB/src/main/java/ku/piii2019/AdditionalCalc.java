@@ -9,8 +9,11 @@ package ku.piii2019;
  *
  * @author k1720552
  */
-public class AdditionalCalc implments TwoParameterCalc{
+public class AdditionalCalc implements TwoParameterCalc{
+    
     public int getAnswer(int a, int b){
-        return a+b;
+        int result = a+b;
+        return result;
     }
+    
 }
