@@ -43,8 +43,8 @@ public class AbstractCalcTest {
     @Test
     public void testDoYourCalc() {
         System.out.println("doYourCalc");
-        int a = 2;
-        int b = 3;
+        int a = 10;
+        int b = 5;
         AdditionalCalc c = null;
         AbstractCalc instance = new AbstractCalc();
         
@@ -58,7 +58,10 @@ public class AbstractCalcTest {
                 }
             }
         );*/
-
+        
+        int expResult = 0;
+        int result = instance.doYourCalc(a, b, myModuloCalc);
+        assertEquals(expResult, result); 
         
         TwoParameterCalc myMultiplyCalc = (int a1,int b1) -> {return a1 * b1;};
         
@@ -68,6 +71,10 @@ public class AbstractCalcTest {
                 return a * b;
             }
         };      */ 
+        
+        expResult = 60;
+        result = instance.doYourCalc(a, b, myMultiplyCalc);
+        assertEquals(expResult, result); 
         
         TwoParameterCalc myDivideCalc = (int a1,int b1) -> {return a1 / b1;};
         /*instance.doYourCalc(a,b,new TwoParameterCalc()
@@ -81,8 +88,8 @@ public class AbstractCalcTest {
             }
         });*/
         
-        int expResult = 5;
-        int result = instance.doYourCalc(a, b, myMultiplyCalc);
+        expResult = 2;
+        result = instance.doYourCalc(a, b, myDivideCalc);
         assertEquals(expResult, result); 
         
 
