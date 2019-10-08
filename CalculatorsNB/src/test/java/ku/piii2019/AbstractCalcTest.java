@@ -47,19 +47,22 @@ public class AbstractCalcTest {
         int b = 3;
         AdditionalCalc c = null;
         AbstractCalc instance = new AbstractCalc();
+        
+        AbstractCalc myModuloCalc = new AbstractCalc(
+            new TwoParameterCalc(){
+                @Override
+                public int getAnswer(int a,int b){
+                    return a%b;
+                }
+            }
+        );
 
         TwoParameterCalc myMultiplyCalc = new TwoParameterCalc() {
             @Override
             public int getAnswer(int a, int b) {
                 return a * b;
             }
-        };
-        
-        int expResult = 5;
-        int result = instance.doYourCalc(a, b, myMultiplyCalc);
-        assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        
+        };       
         
         instance.doYourCalc(a,b,new TwoParameterCalc()
         {
@@ -71,6 +74,10 @@ public class AbstractCalcTest {
                 return a/b;
             }
         });
+        
+        int expResult = 5;
+        int result = instance.doYourCalc(a, b, myMultiplyCalc);
+        assertEquals(expResult, result); 
         
 
     }
