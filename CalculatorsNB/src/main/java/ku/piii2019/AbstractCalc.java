@@ -5,14 +5,6 @@
  */
 package ku.piii2019;
 
-import ku.piii2019.TwoParameterCalc;
-import org.junit.jupiter.api.AfterEach;
-import org.junit.jupiter.api.AfterAll;
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.BeforeAll;
-import org.junit.jupiter.api.Test;
-import static org.junit.jupiter.api.Assertions.*;
-
 /**
  *
  * @author k1720552
@@ -27,14 +19,18 @@ public class AbstractCalc {
     
     TwoParameterCalc myTwoParameterCalc; // the field
     
-    @Test
     int doYourCalc(int a, int b, TwoParameterCalc c) { //first method
-    return c.getAnswer(a,b);
+        return c.getAnswer(a,b);
     }
     
-    @Test
     int doMyCalc(int a, int b) { //second method
     return myTwoParameterCalc.getAnswer(a,b);
+    }
+    
+    public static class SubtractCalc implements TwoParameterCalc{
+        public int getAnswer(int a, int b){
+            return a-b;
+        }
     }
     
 }
